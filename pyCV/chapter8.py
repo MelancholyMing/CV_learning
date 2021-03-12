@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from pycharmproject.pyCV.chapter6 import stackImages
+from chapter6 import stackImages
 
 
 # contours/shape detection

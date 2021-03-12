@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from pycharmproject.pyCV.chapter6 import stackImages
+from chapter6 import stackImages
 
 """HSV 颜色模型
 Hue:色调0-360'
@@ -50,6 +50,9 @@ if __name__ == '__main__':
         v_max = cv2.getTrackbarPos("Value Max", "TrackBars")
         lower = np.array([h_min, s_min, v_min])
         upper = np.array([h_max, s_max, v_max])
+        # lower_red 指的是图像中低于这个 lower_red 的值，图像值变为 0
+        # upper_red 指的是图像中高于这个 upper_red 的值，图像值变为 0
+        # 而在 lower_red～upper_red 之间的值变成 255
         mask = cv2.inRange(imgHSV, lower, upper)
         imgResult = cv2.bitwise_and(img, img, mask=mask)
 
